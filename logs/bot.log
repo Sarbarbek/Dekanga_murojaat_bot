@@ -91,3 +91,6 @@ DETAIL:  Key (id)=(1) already exists.
 2026-04-20 17:09:56,785 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
 2026-04-20 17:09:59,661 INFO aiogram.event Update id=40555098 is handled. Duration 2875 ms by bot id=8521961321
 2026-04-20 17:10:21,879 INFO aiogram.event Update id=40555099 is handled. Duration 891 ms by bot id=8521961321
+2026-04-20 17:13:00,772 INFO aiogram.event Update id=40555100 is handled. Duration 625 ms by bot id=8521961321
+2026-04-20 17:13:52,029 INFO app.routers.common DEBUG: /start received from 6112323488
+2026-04-20 17:13:52,040 INFO app.routers.common DEBUG: User 6112323488 is NORMAL USER
