@@ -24,7 +24,7 @@ async def sync_time_task():
                         time_offset = true_time - local_time
                         logger.debug(f"Vaqt sinxronizatsiya qilindi. Farq: {time_offset.total_seconds():.2f} s")
         except Exception as e:
-            logger.warning(f"Vaqtni sinxronizatsiya qilishda xatolik: {e}")
+            logger.debug(f"Vaqtni sinxronizatsiya qilishda xatolik: {e}")
             
         # Har 1 daqiqada yangilab turish
         await asyncio.sleep(60)

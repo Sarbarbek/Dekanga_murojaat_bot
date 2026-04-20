@@ -115,3 +115,9 @@ DETAIL:  Key (id)=(1) already exists.
 2026-04-20 17:29:41,212 INFO aiogram.event Update id=40555109 is handled. Duration 844 ms by bot id=8521961321
 2026-04-20 17:29:43,037 INFO aiogram.event Update id=40555110 is handled. Duration 172 ms by bot id=8521961321
 2026-04-20 17:30:32,340 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:30:56,241 INFO root Keyingi avtomatik backup 23403.758206 soniyadan so'ng (00:01) olinadi.
+2026-04-20 17:30:56,414 INFO aiogram.dispatcher Start polling
+2026-04-20 17:30:56,589 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
+2026-04-20 17:30:56,594 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:31:57,204 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:32:57,652 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
