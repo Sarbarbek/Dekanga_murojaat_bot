@@ -1,10 +1,11 @@
 import asyncpg
 from typing import Optional, Tuple, List, Any, Dict
 from datetime import datetime, timezone, timedelta
+from app.time_sync import now_utc5, get_now_utc5_str
 
 def get_now_utc5() -> str:
     """Hozirgi vaqtni UTC+5 formatida qaytaradi."""
-    return datetime.now(timezone(timedelta(hours=5))).strftime("%Y-%m-%d %H:%M:%S")
+    return get_now_utc5_str()
 
 class Database:
     def __init__(self, host: str, user: str, password: str, db: str, port: int = 5432, dsn: Optional[str] = None) -> None:
@@ -94,7 +95,7 @@ class Database:
         file_id: Optional[str],
         file_type: str,
     ) -> int:
-        now = datetime.now(timezone(timedelta(hours=5))).replace(tzinfo=None)
+        now = now_utc5().replace(tzinfo=None)
         pool = self._get_pool()
         async with pool.acquire() as conn:
             row = await conn.fetchrow(
@@ -126,7 +127,7 @@ class Database:
             return dict(row) if row else None
 
     async def set_answer(self, *, appeal_id: int, answer_text: str, answered_by: int) -> bool:
-        now = datetime.now(timezone(timedelta(hours=5))).replace(tzinfo=None)
+        now = now_utc5().replace(tzinfo=None)
         pool = self._get_pool()
         async with pool.acquire() as conn:
             status = await conn.execute(
@@ -328,7 +329,7 @@ class Database:
             ]
 
     async def update_user(self, user_id: int, full_name: Optional[str] = None, username: Optional[str] = None) -> None:
-        now = datetime.now(timezone(timedelta(hours=5))).replace(tzinfo=None)
+        now = now_utc5().replace(tzinfo=None)
         pool = self._get_pool()
         async with pool.acquire() as conn:
             await conn.execute(
@@ -428,7 +429,7 @@ class Database:
             async with conn.transaction():
                 # Users restoration
                 for u in data.get("users", []):
-                    created_at = datetime.fromisoformat(u['created_at']) if u.get('created_at') else datetime.now()
+                    created_at = datetime.fromisoformat(u['created_at']) if u.get('created_at') else now_utc5().replace(tzinfo=None)
                     await conn.execute(
                         """
                         INSERT INTO users (user_id, full_name, username, created_at)
@@ -444,7 +445,7 @@ class Database:
                 
                 # Murojaatlar restoration
                 for m in data.get("murojaatlar", []):
-                    created_at = datetime.fromisoformat(m['created_at']) if m.get('created_at') else datetime.now()
+                    created_at = datetime.fromisoformat(m['created_at']) if m.get('created_at') else now_utc5().replace(tzinfo=None)
                     answered_at = datetime.fromisoformat(m['answered_at']) if m.get('answered_at') else None
                     
                     await conn.execute(

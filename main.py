@@ -8,6 +8,7 @@ from aiogram import Bot, Dispatcher
 from app.config import load_settings
 from app.db import Database
 from app.routers import admin, common, user
+from app.time_sync import sync_time_task, now_utc5
 
 async def schedule_daily_backup(bot: Bot, db: Database, admin_ids: list[int]):
     import datetime
@@ -16,8 +17,8 @@ async def schedule_daily_backup(bot: Bot, db: Database, admin_ids: list[int]):
     from aiogram.types import BufferedInputFile
     
     while True:
-        # Hozirgi vaqtni UTC+5 da aniqlash
-        now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5)))
+        # Aniq kelishilgan vaqtni olish
+        now = now_utc5()
         target_time = now.replace(hour=0, minute=1, second=0, microsecond=0)
         
         # Agar soat 00:01 dan o'tib ketgan bo'lsa, keyingi kunga o'tkazamiz
@@ -35,7 +36,7 @@ async def schedule_daily_backup(bot: Bot, db: Database, admin_ids: list[int]):
             bio = io.BytesIO(json_str.encode('utf-8'))
             bio.seek(0)
             
-            filename = f"auto_backup_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            filename = f"auto_backup_{now_utc5().strftime('%Y%m%d_%H%M%S')}.json"
             file = BufferedInputFile(bio.getvalue(), filename=filename)
             
             for admin_id in admin_ids:
@@ -60,7 +61,7 @@ async def main() -> None:
 
     import datetime
     def get_time_utc5(*args):
-        return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5))).timetuple()
+        return now_utc5().timetuple()
 
     # Logging sozlamalari
     log_formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
@@ -112,7 +113,8 @@ async def main() -> None:
     dp.include_router(admin.router)
     dp.include_router(user.router)
 
-    # Avtomatik zahira taskini ishga tushirish (orqa fonda)
+    # Orqa fonda ishlash uchun vazifalar:
+    asyncio.create_task(sync_time_task())
     asyncio.create_task(schedule_daily_backup(bot, db, settings.super_admin_ids))
 
     try:

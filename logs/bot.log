@@ -94,3 +94,11 @@ DETAIL:  Key (id)=(1) already exists.
 2026-04-20 17:13:00,772 INFO aiogram.event Update id=40555100 is handled. Duration 625 ms by bot id=8521961321
 2026-04-20 17:13:52,029 INFO app.routers.common DEBUG: /start received from 6112323488
 2026-04-20 17:13:52,040 INFO app.routers.common DEBUG: User 6112323488 is NORMAL USER
+2026-04-20 17:13:53,463 INFO aiogram.event Update id=40555101 is handled. Duration 1421 ms by bot id=8521961321
+2026-04-20 17:23:01,774 INFO aiogram.event Update id=40555102 is handled. Duration 532 ms by bot id=8521961321
+2026-04-20 17:23:03,800 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
+2026-04-20 17:23:04,334 INFO aiogram.event Update id=40555103 is handled. Duration 530 ms by bot id=8521961321
+2026-04-20 17:25:26,415 INFO root Keyingi avtomatik backup 23733.584421 soniyadan so'ng (00:01) olinadi.
+2026-04-20 17:25:26,571 INFO aiogram.dispatcher Start polling
+2026-04-20 17:25:26,740 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
+2026-04-20 17:25:27,442 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available

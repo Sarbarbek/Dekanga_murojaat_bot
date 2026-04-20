@@ -13,6 +13,8 @@ from aiogram.filters import Command, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.types import FSInputFile
 
+from app.time_sync import now_utc5, get_now_utc5_str
+
 from app.config import Settings
 from app.db import Database
 from app.keyboards import admin_list_pager_kb, admin_menu, broadcast_confirm_kb, dekan_menu, department_kb
@@ -468,7 +470,7 @@ async def admin_broadcast_finish(call: types.CallbackQuery, state: FSMContext, d
             success_count += 1  # type: ignore
         except Exception:
             fail_count += 1  # type: ignore
-        await asyncio.sleep(0.05) # Telegram limitlariga amal qilish
+        await asyncio.sleep(0.034) # 1 soniyada maksimum 30 ta xabar yuborish (Telegram limiti)
         
     logger.info(f"{admin_name(call.from_user.id)} umumiy xabarnoma (broadcast) yubordi. (Yetkazildi: {success_count}, Xatolik: {fail_count})")
 
@@ -483,7 +485,7 @@ async def admin_bot_status(message: types.Message, settings: Settings) -> None:
     if not is_super_admin(settings, message.from_user.id):
         return
 
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = get_now_utc5_str()
     os_info = f"{platform.system()} {platform.release()}"
     
     # Log fayli hajmini tekshirish
@@ -512,7 +514,7 @@ async def admin_download_logs(message: types.Message, settings: Settings) -> Non
 
     log_path = "logs/bot.log"
     if os.path.exists(log_path):
-        file = FSInputFile(log_path, filename=f"bot_log_{datetime.datetime.now().strftime('%d_%m_%H%M')}.log")
+        file = FSInputFile(log_path, filename=f"bot_log_{now_utc5().strftime('%d_%m_%H%M')}.log")
         await message.answer_document(file, caption="📄 Botning oxirgi jurnallari (logs)")
     else:
         await message.answer("❌ Log fayli topilmadi.")
@@ -589,7 +591,7 @@ async def admin_backup_start(message: types.Message, settings: Settings, db: Dat
         bio = io.BytesIO(json_str.encode('utf-8'))
         bio.seek(0)
         
-        filename = f"backup_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        filename = f"backup_{now_utc5().strftime('%Y%m%d_%H%M%S')}.json"
         file = types.BufferedInputFile(bio.getvalue(), filename=filename)
         
         await message.answer_document(
