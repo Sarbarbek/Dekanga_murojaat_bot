@@ -13,3 +13,81 @@
 2026-04-20 16:52:37,154 INFO root Keyingi avtomatik backup 25702.845388 soniyadan so'ng (00:01) olinadi.
 2026-04-20 16:52:37,252 INFO aiogram.dispatcher Start polling
 2026-04-20 16:52:37,362 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
+2026-04-20 17:05:20,454 INFO aiogram.event Update id=40555084 is handled. Duration 1046 ms by bot id=8521961321
+2026-04-20 17:05:22,934 INFO aiogram.event Update id=40555085 is handled. Duration 171 ms by bot id=8521961321
+2026-04-20 17:05:27,572 INFO aiogram.event Update id=40555086 is handled. Duration 204 ms by bot id=8521961321
+2026-04-20 17:05:45,107 INFO app.routers.admin Sarbarbek ma'lumotlarni zahira faylidan tikladi.
+2026-04-20 17:05:45,268 INFO aiogram.event Update id=40555087 is handled. Duration 2610 ms by bot id=8521961321
+2026-04-20 17:05:53,588 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
+2026-04-20 17:05:53,873 INFO aiogram.event Update id=40555088 is handled. Duration 297 ms by bot id=8521961321
+2026-04-20 17:06:59,042 INFO aiogram.event Update id=40555089 is handled. Duration 1655 ms by bot id=8521961321
+2026-04-20 17:07:04,991 INFO app.routers.user Foydalanuvchi Sobirjon (393798774) '☀️ Kunduzgi dekanat' ni tanladi.
+2026-04-20 17:07:05,218 INFO aiogram.event Update id=40555090 is handled. Duration 390 ms by bot id=8521961321
+2026-04-20 17:07:19,049 INFO app.routers.user Foydalanuvchi Sobirjon (393798774) guruhini kiritdi: ISE_N-23UA
+2026-04-20 17:07:19,238 INFO aiogram.event Update id=40555091 is handled. Duration 202 ms by bot id=8521961321
+2026-04-20 17:07:26,749 INFO app.routers.user Foydalanuvchi (393798774) ism-sharifini kiritdi: Akbaraliyev Sarbarbek
+2026-04-20 17:07:27,007 INFO aiogram.event Update id=40555092 is handled. Duration 266 ms by bot id=8521961321
+2026-04-20 17:07:38,827 INFO app.routers.user Foydalanuvchi (393798774) pasport ma'lumotlarini kiritdi: AA1234567
+2026-04-20 17:07:38,992 INFO aiogram.event Update id=40555093 is handled. Duration 170 ms by bot id=8521961321
+2026-04-20 17:07:50,065 INFO app.routers.user Foydalanuvchi (393798774) telefon raqamini kiritdi: +998999775530
+2026-04-20 17:07:51,240 INFO aiogram.event Update id=40555094 is handled. Duration 1186 ms by bot id=8521961321
+2026-04-20 17:08:07,083 INFO aiogram.event Update id=40555095 is not handled. Duration 61 ms by bot id=8521961321
+2026-04-20 17:08:07,083 ERROR aiogram.event Cause exception while process update id=40555095 by bot id=8521961321
+UniqueViolationError: duplicate key value violates unique constraint "murojaatlar_pkey"
+DETAIL:  Key (id)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\A104\Desktop\Dekanga_murojaat_bot-main\app\routers\user.py", line 395, in appeal_body
+    await _finish_appeal(message, state, db, bot, settings)
+  File "C:\Users\A104\Desktop\Dekanga_murojaat_bot-main\app\routers\user.py", line 469, in _finish_appeal
+    appeal_id = await db.create_murojaat(
+  File "C:\Users\A104\Desktop\Dekanga_murojaat_bot-main\app\db.py", line 100, in create_murojaat
+    row = await conn.fetchrow(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\asyncpg\connection.py", line 752, in fetchrow
+    data = await self._execute(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\asyncpg\connection.py", line 1873, in _execute
+    result, _ = await self.__execute(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\asyncpg\connection.py", line 1970, in __execute
+    result, stmt = await self._do_execute(
+  File "C:\Users\A104\AppData\Local\Programs\Python\Python310\lib\site-packages\asyncpg\connection.py", line 2033, in _do_execute
+    result = await executor(stmt, None)
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "murojaatlar_pkey"
+DETAIL:  Key (id)=(1) already exists.
+2026-04-20 17:08:22,942 INFO aiogram.event Update id=40555096 is handled. Duration 500 ms by bot id=8521961321
+2026-04-20 17:08:55,027 INFO app.routers.admin Sarbarbek bot jurnallarini (log) yuklab oldi.
+2026-04-20 17:08:55,852 INFO aiogram.event Update id=40555097 is handled. Duration 827 ms by bot id=8521961321
+2026-04-20 17:09:56,785 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
+2026-04-20 17:09:59,661 INFO aiogram.event Update id=40555098 is handled. Duration 2875 ms by bot id=8521961321
+2026-04-20 17:10:21,879 INFO aiogram.event Update id=40555099 is handled. Duration 891 ms by bot id=8521961321
