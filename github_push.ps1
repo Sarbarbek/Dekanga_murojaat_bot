@@ -3,6 +3,7 @@
 
 $ErrorActionPreference = "Stop"
 $repoPath = $PSScriptRoot
+Set-Location -Path $repoPath
 $remoteUrl = "https://github.com/Sarbarbek/Dekanga_murojaat_bot.git"
 
 Write-Host "Git repositoriyasini tayyorlamoqda..." -ForegroundColor Cyan
