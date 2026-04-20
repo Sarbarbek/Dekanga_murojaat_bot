@@ -102,3 +102,16 @@ DETAIL:  Key (id)=(1) already exists.
 2026-04-20 17:25:26,571 INFO aiogram.dispatcher Start polling
 2026-04-20 17:25:26,740 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
 2026-04-20 17:25:27,442 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:26:27,701 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:26:51,829 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
+2026-04-20 17:26:52,441 INFO aiogram.event Update id=40555104 is handled. Duration 625 ms by bot id=8521961321
+2026-04-20 17:27:28,088 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:28:28,402 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:29:31,903 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
+2026-04-20 17:29:33,957 INFO aiogram.event Update id=40555106 is handled. Duration 1889 ms by bot id=8521961321
+2026-04-20 17:29:34,185 INFO aiogram.event Update id=40555105 is handled. Duration 4094 ms by bot id=8521961321
+2026-04-20 17:29:37,670 INFO aiogram.event Update id=40555107 is handled. Duration 203 ms by bot id=8521961321
+2026-04-20 17:29:39,688 INFO aiogram.event Update id=40555108 is handled. Duration 250 ms by bot id=8521961321
+2026-04-20 17:29:41,212 INFO aiogram.event Update id=40555109 is handled. Duration 844 ms by bot id=8521961321
+2026-04-20 17:29:43,037 INFO aiogram.event Update id=40555110 is handled. Duration 172 ms by bot id=8521961321
+2026-04-20 17:30:32,340 WARNING app.time_sync Vaqtni sinxronizatsiya qilishda xatolik: [WinError 64] The specified network name is no longer available
