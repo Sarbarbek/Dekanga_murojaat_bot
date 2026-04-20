@@ -1,0 +1,15 @@
+2026-04-20 16:40:30,743 INFO root Keyingi avtomatik backup 26429.256654 soniyadan so'ng (00:01) olinadi.
+2026-04-20 16:40:30,842 INFO aiogram.dispatcher Start polling
+2026-04-20 16:40:30,953 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
+2026-04-20 16:41:35,757 INFO app.routers.common DEBUG: /start received from 5989915268
+2026-04-20 16:41:35,779 INFO app.routers.common DEBUG: User 5989915268 is ADMIN
+2026-04-20 16:41:37,498 INFO app.routers.common DEBUG: /start received from 5989915268
+2026-04-20 16:41:37,501 INFO app.routers.common DEBUG: User 5989915268 is ADMIN
+2026-04-20 16:41:37,771 INFO aiogram.event Update id=40555072 is handled. Duration 2015 ms by bot id=8521961321
+2026-04-20 16:41:39,554 INFO aiogram.event Update id=40555073 is handled. Duration 2063 ms by bot id=8521961321
+2026-04-20 16:41:42,143 INFO app.routers.admin Sarbarbek 'Foydalanuvchilar' ro'yxatini ochdi.
+2026-04-20 16:41:42,354 INFO aiogram.event Update id=40555074 is handled. Duration 202 ms by bot id=8521961321
+2026-04-20 16:41:48,227 INFO aiogram.event Update id=40555075 is handled. Duration 140 ms by bot id=8521961321
+2026-04-20 16:52:37,154 INFO root Keyingi avtomatik backup 25702.845388 soniyadan so'ng (00:01) olinadi.
+2026-04-20 16:52:37,252 INFO aiogram.dispatcher Start polling
+2026-04-20 16:52:37,362 INFO aiogram.dispatcher Run polling for bot @namkiutdekan_bot id=8521961321 - 'Dekanga murojaat'
